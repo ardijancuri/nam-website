@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  BriefcaseBusiness,
-  CalendarRange,
-  CarFront,
-  Clock3,
+  Briefcase,
+  CalendarDots,
+  Car,
+  ChatsCircle,
+  Clock,
   GraduationCap,
-  MessageSquareText,
-  MessageSquareWarning,
-  Route,
-  ScanSearch,
+  Grains,
+  MagnifyingGlass,
+  Path,
   ShieldCheck,
-  TrendingUp,
-  UsersRound,
-  Wheat,
-} from "lucide-react";
+  TrendUp,
+  UsersThree,
+  Warning,
+} from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../components/Reveal";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -45,7 +45,7 @@ const localProducts = [
 
 const recommendations = [
   {
-    icon: CarFront,
+    icon: Car,
     title: "Përmirësimi i qasjes dhe parkingut",
     text: "Investime në infrastrukturë, rrugë këmbësorësh dhe hapësira parkimi pranë Qendrës Historike.",
   },
@@ -60,12 +60,12 @@ const recommendations = [
     text: "Program i vazhdueshëm për shërbim, gjuhë, higjienë dhe menaxhim sezonal.",
   },
   {
-    icon: MessageSquareText,
+    icon: ChatsCircle,
     title: "Komunikim institucional me bizneset",
     text: "Kanale të qarta komunikimi ndërmjet komunës, institucioneve dhe bizneseve.",
   },
   {
-    icon: Wheat,
+    icon: Grains,
     title: "Promovimi i produkteve vendore dhe gastronomisë",
     text: "Integrim i gastronomisë lokale në festivalet dhe ngjarjet kulturore të Prizrenit.",
   },
@@ -93,11 +93,10 @@ export default function ResearchPage() {
             <div className="report-hero-meta hero-enter hero-enter-2">
               <div>
                 <span className="report-meta-label">
-                  <BriefcaseBusiness
+                  <Briefcase
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={20}
-                    strokeWidth={1.2}
+                    size={22}
+                    weight="duotone"
                   />
                   Mostra
                 </span>
@@ -105,11 +104,10 @@ export default function ResearchPage() {
               </div>
               <div>
                 <span className="report-meta-label">
-                  <ScanSearch
+                  <MagnifyingGlass
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={20}
-                    strokeWidth={1.2}
+                    size={22}
+                    weight="duotone"
                   />
                   Mbulimi
                 </span>
@@ -117,11 +115,10 @@ export default function ResearchPage() {
               </div>
               <div>
                 <span className="report-meta-label">
-                  <CalendarRange
+                  <CalendarDots
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={20}
-                    strokeWidth={1.2}
+                    size={22}
+                    weight="duotone"
                   />
                   Terreni
                 </span>
@@ -230,7 +227,7 @@ export default function ResearchPage() {
             <Reveal>
               <StatMetric
                 context="Përvoja në treg"
-                icon={Clock3}
+                icon={Clock}
                 label="operojnë prej më shumë se 10 vjetësh"
                 progress={65}
                 value="65%"
@@ -239,7 +236,7 @@ export default function ResearchPage() {
             <Reveal delay={80}>
               <StatMetric
                 context="Sezoni dhe të ardhurat"
-                icon={TrendingUp}
+                icon={TrendUp}
                 label="raportojnë rritje mbi 31% gjatë sezonit veror"
                 progress={87.5}
                 value="87.5%"
@@ -248,7 +245,7 @@ export default function ResearchPage() {
             <Reveal delay={160}>
               <StatMetric
                 context="Madhësia"
-                icon={UsersRound}
+                icon={UsersThree}
                 label="kanë deri në 10 punonjës"
                 progress={87.5}
                 value="87.5%"
@@ -291,11 +288,10 @@ export default function ResearchPage() {
             <div className="challenge-grid">
               <Reveal className="challenge-stat">
                 <span className="challenge-icon">
-                  <CarFront
+                  <Car
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={34}
-                    strokeWidth={1.2}
+                    size={36}
+                    weight="duotone"
                   />
                 </span>
                 <strong>4.67/5</strong>
@@ -307,11 +303,10 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal className="challenge-stat" delay={80}>
                 <span className="challenge-icon">
-                  <UsersRound
+                  <UsersThree
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={34}
-                    strokeWidth={1.2}
+                    size={36}
+                    weight="duotone"
                   />
                 </span>
                 <strong>77.5%</strong>
@@ -323,11 +318,10 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal className="challenge-stat" delay={160}>
                 <span className="challenge-icon">
-                  <MessageSquareWarning
+                  <Warning
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={34}
-                    strokeWidth={1.2}
+                    size={36}
+                    weight="duotone"
                   />
                 </span>
                 <strong>72.5%</strong>
@@ -348,11 +342,10 @@ export default function ResearchPage() {
             <div className="public-space-list">
               <Reveal>
                 <span className="public-space-icon">
-                  <CarFront
+                  <Car
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={30}
-                    strokeWidth={1.2}
+                    size={32}
+                    weight="duotone"
                   />
                   <small>01</small>
                 </span>
@@ -366,9 +359,8 @@ export default function ResearchPage() {
                 <span className="public-space-icon">
                   <ShieldCheck
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={30}
-                    strokeWidth={1.2}
+                    size={32}
+                    weight="duotone"
                   />
                   <small>02</small>
                 </span>
@@ -380,11 +372,10 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal delay={140}>
                 <span className="public-space-icon">
-                  <Route
+                  <Path
                     aria-hidden="true"
-                    fill="currentColor"
-                    size={30}
-                    strokeWidth={1.2}
+                    size={32}
+                    weight="duotone"
                   />
                   <small>03</small>
                 </span>
@@ -409,9 +400,8 @@ export default function ResearchPage() {
                     <span className="recommendation-marker">
                       <item.icon
                         aria-hidden="true"
-                        fill="currentColor"
-                        size={30}
-                        strokeWidth={1.2}
+                        size={32}
+                        weight="duotone"
                       />
                       <small>{String(index + 1).padStart(2, "0")}</small>
                     </span>

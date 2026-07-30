@@ -1,20 +1,20 @@
 import Link from "next/link";
 import {
-  BriefcaseBusiness,
-  Building2,
-  CalendarRange,
-  CarFront,
-  ChartNoAxesColumnIncreasing,
+  Bank,
+  Briefcase,
+  Buildings,
+  CalendarDots,
+  Car,
+  ChartLineUp,
+  ChatsCircle,
   GraduationCap,
-  Landmark,
-  MapPinned,
-  MessageSquareText,
-  ScanSearch,
+  Grains,
+  MapPin,
+  MagnifyingGlass,
+  Plant,
   ShieldCheck,
-  Sprout,
-  UsersRound,
-  Wheat,
-} from "lucide-react";
+  UsersThree,
+} from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./components/Reveal";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -25,40 +25,40 @@ const importance = [
     number: "01",
     title: "Turizmi",
     text: "Gastronomia ndikon në vendimin e vizitorëve për të qëndruar më gjatë.",
-    icon: MapPinned,
+    icon: MapPin,
   },
   {
     number: "02",
     title: "Ekonomia lokale",
     text: "Bizneset krijojnë vende pune dhe kontribuojnë në të ardhurat e komunës.",
-    icon: ChartNoAxesColumnIncreasing,
+    icon: ChartLineUp,
   },
   {
     number: "03",
     title: "Kultura",
     text: "Ushqimi tradicional lidh brezat dhe tërheq turistët kulturorë.",
-    icon: Landmark,
+    icon: Bank,
   },
   {
     number: "04",
     title: "Hapësira publike",
     text: "Kafetë dhe restorantet aktivizojnë hapësirat historike të qytetit.",
-    icon: Building2,
+    icon: Buildings,
   },
   {
     number: "05",
     title: "Vizitorët",
     text: "Përvoja gastronomike formëson kënaqësinë dhe imazhin e Prizrenit.",
-    icon: UsersRound,
+    icon: UsersThree,
   },
 ];
 
 const priorities = [
-  { title: "Qasja dhe parkimi", icon: CarFront },
+  { title: "Qasja dhe parkimi", icon: Car },
   { title: "Menaxhimi i hapësirës publike", icon: ShieldCheck },
   { title: "Trajnimi dhe profesionalizmi i stafit", icon: GraduationCap },
-  { title: "Komunikimi institucional", icon: MessageSquareText },
-  { title: "Produktet vendore dhe eventet", icon: Wheat },
+  { title: "Komunikimi institucional", icon: ChatsCircle },
+  { title: "Produktet vendore dhe eventet", icon: Grains },
 ];
 
 export default function Home() {
@@ -126,7 +126,7 @@ export default function Home() {
             <Reveal delay={40}>
               <StatMetric
                 context="Mostra"
-                icon={BriefcaseBusiness}
+                icon={Briefcase}
                 label="biznese në mostër"
                 progress={100}
                 value="40"
@@ -135,7 +135,7 @@ export default function Home() {
             <Reveal delay={100}>
               <StatMetric
                 context="Mbulimi"
-                icon={ScanSearch}
+                icon={MagnifyingGlass}
                 label="mbulim i sektorit në zonë"
                 progress={80}
                 value="~80%"
@@ -144,7 +144,7 @@ export default function Home() {
             <Reveal delay={160}>
               <StatMetric
                 context="Terreni"
-                icon={CalendarRange}
+                icon={CalendarDots}
                 label="ditë punë në terren"
                 progress={64}
                 value="36"
@@ -213,11 +213,10 @@ export default function Home() {
           <Reveal className="data-feature-visual" delay={140}>
             <div className="donut" role="img" aria-label="77.5 për qind">
               <div>
-                <UsersRound
+                <UsersThree
                   className="donut-icon"
-                  fill="currentColor"
                   size={32}
-                  strokeWidth={1.2}
+                  weight="duotone"
                   aria-hidden="true"
                 />
                 <strong>77.5%</strong>
@@ -226,10 +225,9 @@ export default function Home() {
             </div>
             <div className="mini-stat">
               <div className="mini-stat-top">
-                <CarFront
-                  fill="currentColor"
+                <Car
                   size={28}
-                  strokeWidth={1.2}
+                  weight="duotone"
                   aria-hidden="true"
                 />
                 <strong>4.67 / 5</strong>
@@ -238,10 +236,9 @@ export default function Home() {
             </div>
             <div className="mini-stat">
               <div className="mini-stat-top">
-                <MessageSquareText
-                  fill="currentColor"
+                <ChatsCircle
                   size={28}
-                  strokeWidth={1.2}
+                  weight="duotone"
                   aria-hidden="true"
                 />
                 <strong>72.5%</strong>
@@ -273,9 +270,8 @@ export default function Home() {
                 <div className="importance-item-top">
                   <span>{item.number}</span>
                   <item.icon
-                    fill="currentColor"
                     size={30}
-                    strokeWidth={1.2}
+                    weight="duotone"
                     aria-hidden="true"
                   />
                 </div>
@@ -303,9 +299,8 @@ export default function Home() {
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <span className="priority-icon" aria-hidden="true">
                     <priority.icon
-                      fill="currentColor"
                       size={30}
-                      strokeWidth={1.2}
+                      weight="duotone"
                     />
                   </span>
                   <strong>{priority.title}</strong>
@@ -320,7 +315,11 @@ export default function Home() {
           <Reveal className="about-teaser-kicker">
             <p className="section-label">Rreth NAM</p>
             <span className="about-year">
-              <Sprout size={17} strokeWidth={1.6} aria-hidden="true" />
+              <Plant
+                size={21}
+                weight="duotone"
+                aria-hidden="true"
+              />
               2026
             </span>
           </Reveal>
