@@ -400,10 +400,9 @@ export default function ResearchPage() {
                     <span className="recommendation-marker">
                       <item.icon
                         aria-hidden="true"
-                        size={32}
+                        size={42}
                         weight="duotone"
                       />
-                      <small>{String(index + 1).padStart(2, "0")}</small>
                     </span>
                     <div>
                       <h3>{item.title}</h3>

@@ -22,31 +22,26 @@ import { StatMetric } from "./components/StatMetric";
 
 const importance = [
   {
-    number: "01",
     title: "Turizmi",
     text: "Gastronomia ndikon në vendimin e vizitorëve për të qëndruar më gjatë.",
     icon: MapPin,
   },
   {
-    number: "02",
     title: "Ekonomia lokale",
     text: "Bizneset krijojnë vende pune dhe kontribuojnë në të ardhurat e komunës.",
     icon: ChartLineUp,
   },
   {
-    number: "03",
     title: "Kultura",
     text: "Ushqimi tradicional lidh brezat dhe tërheq turistët kulturorë.",
     icon: Bank,
   },
   {
-    number: "04",
     title: "Hapësira publike",
     text: "Kafetë dhe restorantet aktivizojnë hapësirat historike të qytetit.",
     icon: Buildings,
   },
   {
-    number: "05",
     title: "Vizitorët",
     text: "Përvoja gastronomike formëson kënaqësinë dhe imazhin e Prizrenit.",
     icon: UsersThree,
@@ -265,12 +260,11 @@ export default function Home() {
               <Reveal
                 className="importance-item"
                 delay={index * 50}
-                key={item.number}
+                key={item.title}
               >
                 <div className="importance-item-top">
-                  <span>{item.number}</span>
                   <item.icon
-                    size={30}
+                    size={42}
                     weight="duotone"
                     aria-hidden="true"
                   />
@@ -296,10 +290,9 @@ export default function Home() {
             {priorities.map((priority, index) => (
               <Reveal delay={index * 45} key={priority.title}>
                 <li>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
                   <span className="priority-icon" aria-hidden="true">
                     <priority.icon
-                      size={30}
+                      size={40}
                       weight="duotone"
                     />
                   </span>
