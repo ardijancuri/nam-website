@@ -65,6 +65,37 @@ export default function AboutPage() {
             </Reveal>
           </section>
 
+          <section
+            className="about-place-chapter"
+            aria-labelledby="place-chapter-title"
+          >
+            <Reveal className="about-place-media">
+              <img
+                src="/prizren-cultural-heritage.webp"
+                alt="Kulla e një kishe historike në Prizren në dritën e mbrëmjes"
+                width="1600"
+                height="1066"
+                loading="lazy"
+              />
+            </Reveal>
+            <Reveal className="about-place-copy" delay={90}>
+              <div className="about-place-number" aria-hidden="true">
+                02
+              </div>
+              <div>
+                <p className="section-label">Vendi dhe identiteti</p>
+                <h2 id="place-chapter-title">
+                  Turizmi fillon nga kuptimi i vendit.
+                </h2>
+                <p>
+                  Trashëgimia kulturore nuk është sfond. Ajo është pjesë e
+                  përvojës, kujtesës dhe vlerës që një destinacion u ofron
+                  vizitorëve dhe komunitetit.
+                </p>
+              </div>
+            </Reveal>
+          </section>
+
           <section className="section about-work">
             <Reveal className="about-work-heading">
               <span>02</span>

@@ -141,6 +141,39 @@ export default function ResearchPage() {
             </Reveal>
           </section>
 
+          <section
+            className="section report-field-note"
+            aria-labelledby="field-context-title"
+          >
+            <Reveal className="report-field-visual">
+              <img
+                src="/prizren-stone-bridge-evening.webp"
+                alt="Restorantet pranë Urës së Gurit në Qendrën Historike të Prizrenit"
+                width="1600"
+                height="1066"
+                loading="lazy"
+              />
+              <span aria-hidden="true">02</span>
+            </Reveal>
+            <Reveal className="report-field-copy" delay={90}>
+              <p className="section-label">Konteksti i terrenit</p>
+              <h2 id="field-context-title">
+                Qyteti dhe gastronomia funksionojnë si një sistem.
+              </h2>
+              <p className="large-copy">
+                Hapësira publike, qasja dhe ritmi sezonal ndikojnë po aq sa
+                vetë oferta e bizneseve.
+              </p>
+              <div className="report-field-caption">
+                <span>Prizren · 2026</span>
+                <p>
+                  Qendra Historike lidh ekonominë lokale, trashëgiminë dhe
+                  përvojën e vizitorit në një territor të vetëm.
+                </p>
+              </div>
+            </Reveal>
+          </section>
+
           <section className="section chart-section">
             <Reveal className="chart-heading">
               <p className="section-label">Struktura e bizneseve</p>
