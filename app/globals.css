@@ -279,39 +279,24 @@ p {
 }
 
 .brand {
-  display: inline-grid;
-  grid-template-columns: 14px auto auto;
+  display: inline-flex;
   align-items: center;
   color: var(--ink);
-  gap: 10px;
 }
 
-.brand-dash {
-  width: 13px;
-  height: 2px;
-  background: currentColor;
+.brand-logo {
+  display: block;
+  width: clamp(148px, 16vw, 210px);
+  height: auto;
 }
 
-.brand-name {
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.065em;
-  line-height: 1;
-}
-
-.brand-descriptor {
-  max-width: 150px;
-  padding-left: 2px;
-  font-size: 0.42rem;
-  font-weight: 690;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.site-header-dark .brand,
 .site-header-dark .desktop-nav {
   color: var(--white);
+}
+
+.site-header-dark .brand-logo,
+.site-footer .brand-logo {
+  filter: brightness(0) invert(1);
 }
 
 .desktop-nav {
@@ -782,8 +767,8 @@ p {
   gap: 80px;
 }
 
-.site-footer .brand {
-  color: var(--white);
+.site-footer .brand-logo {
+  width: clamp(180px, 20vw, 248px);
 }
 
 .site-footer-main > p {
@@ -1680,20 +1665,11 @@ p {
   }
 
   .brand {
-    grid-template-columns: 11px auto;
-    gap: 8px;
+    display: inline-flex;
   }
 
-  .brand-dash {
-    width: 10px;
-  }
-
-  .brand-name {
-    font-size: 1.2rem;
-  }
-
-  .brand-descriptor {
-    display: none;
+  .brand-logo {
+    width: 140px;
   }
 
   .home-hero {

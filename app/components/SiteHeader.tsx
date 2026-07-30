@@ -7,13 +7,14 @@ type SiteHeaderProps = {
 export function Brand() {
   return (
     <span className="brand" aria-label="Instituti për Turizëm dhe Kulturë NAM">
-      <span className="brand-dash" aria-hidden="true" />
-      <span className="brand-name">NAM</span>
-      <span className="brand-descriptor">
-        Instituti për Turizëm dhe Kulturë
-        <br />
-        Institute for Tourism and Culture
-      </span>
+      <img
+        className="brand-logo"
+        src="/nam-logo.svg"
+        width="248"
+        height="56"
+        alt=""
+        aria-hidden="true"
+      />
     </span>
   );
 }
