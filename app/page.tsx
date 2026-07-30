@@ -1,4 +1,20 @@
 import Link from "next/link";
+import {
+  BriefcaseBusiness,
+  Building2,
+  CalendarRange,
+  CarFront,
+  ChartNoAxesColumnIncreasing,
+  GraduationCap,
+  Landmark,
+  MapPinned,
+  MessageSquareText,
+  ScanSearch,
+  ShieldCheck,
+  Sprout,
+  UsersRound,
+  Wheat,
+} from "lucide-react";
 import { Reveal } from "./components/Reveal";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -8,35 +24,40 @@ const importance = [
     number: "01",
     title: "Turizmi",
     text: "Gastronomia ndikon në vendimin e vizitorëve për të qëndruar më gjatë.",
+    icon: MapPinned,
   },
   {
     number: "02",
     title: "Ekonomia lokale",
     text: "Bizneset krijojnë vende pune dhe kontribuojnë në të ardhurat e komunës.",
+    icon: ChartNoAxesColumnIncreasing,
   },
   {
     number: "03",
     title: "Kultura",
     text: "Ushqimi tradicional lidh brezat dhe tërheq turistët kulturorë.",
+    icon: Landmark,
   },
   {
     number: "04",
     title: "Hapësira publike",
     text: "Kafetë dhe restorantet aktivizojnë hapësirat historike të qytetit.",
+    icon: Building2,
   },
   {
     number: "05",
     title: "Vizitorët",
     text: "Përvoja gastronomike formëson kënaqësinë dhe imazhin e Prizrenit.",
+    icon: UsersRound,
   },
 ];
 
 const priorities = [
-  "Qasja dhe parkimi",
-  "Menaxhimi i hapësirës publike",
-  "Trajnimi dhe profesionalizmi i stafit",
-  "Komunikimi institucional",
-  "Produktet vendore dhe eventet",
+  { title: "Qasja dhe parkimi", icon: CarFront },
+  { title: "Menaxhimi i hapësirës publike", icon: ShieldCheck },
+  { title: "Trajnimi dhe profesionalizmi i stafit", icon: GraduationCap },
+  { title: "Komunikimi institucional", icon: MessageSquareText },
+  { title: "Produktet vendore dhe eventet", icon: Wheat },
 ];
 
 export default function Home() {
@@ -102,16 +123,43 @@ export default function Home() {
 
           <div className="publication-metrics" aria-label="Të dhënat kryesore">
             <Reveal delay={40}>
+              <div className="metric-header">
+                <span className="metric-icon" aria-hidden="true">
+                  <BriefcaseBusiness size={18} strokeWidth={1.7} />
+                </span>
+                <span className="metric-context">Mostra</span>
+              </div>
               <span className="metric-value">40</span>
               <span className="metric-label">biznese në mostër</span>
+              <span className="metric-rule" aria-hidden="true">
+                <span style={{ width: "100%" }} />
+              </span>
             </Reveal>
             <Reveal delay={100}>
+              <div className="metric-header">
+                <span className="metric-icon" aria-hidden="true">
+                  <ScanSearch size={18} strokeWidth={1.7} />
+                </span>
+                <span className="metric-context">Mbulimi</span>
+              </div>
               <span className="metric-value">~80%</span>
               <span className="metric-label">mbulim i sektorit në zonë</span>
+              <span className="metric-rule" aria-hidden="true">
+                <span style={{ width: "80%" }} />
+              </span>
             </Reveal>
             <Reveal delay={160}>
+              <div className="metric-header">
+                <span className="metric-icon" aria-hidden="true">
+                  <CalendarRange size={18} strokeWidth={1.7} />
+                </span>
+                <span className="metric-context">Terreni</span>
+              </div>
               <span className="metric-value">36</span>
               <span className="metric-label">ditë punë në terren</span>
+              <span className="metric-rule" aria-hidden="true">
+                <span style={{ width: "64%" }} />
+              </span>
             </Reveal>
           </div>
         </section>
@@ -142,16 +190,32 @@ export default function Home() {
           <Reveal className="data-feature-visual" delay={140}>
             <div className="donut" role="img" aria-label="77.5 për qind">
               <div>
+                <UsersRound
+                  className="donut-icon"
+                  size={24}
+                  strokeWidth={1.6}
+                  aria-hidden="true"
+                />
                 <strong>77.5%</strong>
                 <span>raportojnë mungesë stafi</span>
               </div>
             </div>
             <div className="mini-stat">
-              <strong>4.67 / 5</strong>
+              <div className="mini-stat-top">
+                <CarFront size={19} strokeWidth={1.7} aria-hidden="true" />
+                <strong>4.67 / 5</strong>
+              </div>
               <span>Parkingu - pengesa më e madhe</span>
             </div>
             <div className="mini-stat">
-              <strong>72.5%</strong>
+              <div className="mini-stat-top">
+                <MessageSquareText
+                  size={19}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+                <strong>72.5%</strong>
+              </div>
               <span>Pa udhëzime institucionale</span>
             </div>
           </Reveal>
@@ -176,7 +240,10 @@ export default function Home() {
                 delay={index * 50}
                 key={item.number}
               >
-                <span>{item.number}</span>
+                <div className="importance-item-top">
+                  <span>{item.number}</span>
+                  <item.icon size={22} strokeWidth={1.6} aria-hidden="true" />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </Reveal>
@@ -196,10 +263,13 @@ export default function Home() {
 
           <ol className="priority-list">
             {priorities.map((priority, index) => (
-              <Reveal delay={index * 45} key={priority}>
+              <Reveal delay={index * 45} key={priority.title}>
                 <li>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{priority}</strong>
+                  <span className="priority-icon" aria-hidden="true">
+                    <priority.icon size={20} strokeWidth={1.6} />
+                  </span>
+                  <strong>{priority.title}</strong>
                   <span aria-hidden="true">↗</span>
                 </li>
               </Reveal>
@@ -210,7 +280,10 @@ export default function Home() {
         <section className="section about-teaser">
           <Reveal className="about-teaser-kicker">
             <p className="section-label">Rreth NAM</p>
-            <span className="about-year">2026</span>
+            <span className="about-year">
+              <Sprout size={17} strokeWidth={1.6} aria-hidden="true" />
+              2026
+            </span>
           </Reveal>
           <Reveal className="about-teaser-copy" delay={100}>
             <h2>

@@ -106,7 +106,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.3rem, 7vw, 7.4rem);
+  font-size: clamp(2.95rem, 5.8vw, 6.2rem);
   font-weight: 620;
   letter-spacing: -0.065em;
   line-height: 0.94;
@@ -115,7 +115,7 @@ h1 {
 h2 {
   margin-bottom: 30px;
   color: var(--violet);
-  font-size: clamp(2.5rem, 5vw, 5.25rem);
+  font-size: clamp(2.15rem, 4.2vw, 4.45rem);
   font-weight: 610;
   letter-spacing: -0.055em;
   line-height: 0.98;
@@ -286,7 +286,7 @@ p {
 
 .brand-logo {
   display: block;
-  width: clamp(148px, 16vw, 210px);
+  width: clamp(112px, 12vw, 158px);
   height: auto;
 }
 
@@ -469,9 +469,35 @@ p {
   border-right: 0;
 }
 
+.metric-header {
+  display: flex;
+  margin-bottom: 38px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-icon,
+.stat-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--violet);
+  place-items: center;
+}
+
+.metric-context {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
 .metric-value {
   color: var(--violet);
-  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-size: clamp(2.8rem, 5vw, 5.3rem);
   font-weight: 580;
   letter-spacing: -0.075em;
   line-height: 0.9;
@@ -481,6 +507,24 @@ p {
   margin-top: 20px;
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+.metric-rule {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 28px;
+  overflow: hidden;
+  background: var(--lavender);
+}
+
+.metric-rule > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--violet), var(--violet-soft));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: grow-bar 1s 280ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* Homepage data feature */
@@ -547,7 +591,13 @@ p {
   display: flex;
   width: 180px;
   text-align: center;
+  align-items: center;
   flex-direction: column;
+}
+
+.donut-icon {
+  margin-bottom: 15px;
+  color: var(--violet);
 }
 
 .donut strong {
@@ -577,6 +627,13 @@ p {
   color: var(--violet);
   font-size: 1.8rem;
   letter-spacing: -0.045em;
+}
+
+.mini-stat-top {
+  display: flex;
+  color: var(--violet);
+  align-items: center;
+  gap: 12px;
 }
 
 .mini-stat span {
@@ -629,13 +686,20 @@ p {
   border-right: 0;
 }
 
-.importance-item > span {
+.importance-item-top {
+  display: flex;
+  color: var(--violet);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.importance-item-top > span {
   color: var(--violet);
   font-size: 0.68rem;
 }
 
 .importance-item h3 {
-  margin: 70px 0 18px;
+  margin: 48px 0 18px;
 }
 
 .importance-item p {
@@ -688,7 +752,7 @@ p {
   display: grid;
   min-height: 108px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 44px 50px 1fr auto;
   align-items: center;
   transition:
     padding 220ms ease,
@@ -703,6 +767,16 @@ p {
 .priority-list li span {
   color: rgba(255, 255, 255, 0.47);
   font-size: 0.74rem;
+}
+
+.priority-list .priority-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(185, 176, 255, 0.42);
+  border-radius: 50%;
+  color: var(--violet-soft);
+  place-items: center;
 }
 
 .priority-list li strong {
@@ -736,9 +810,12 @@ p {
 }
 
 .about-year {
+  display: flex;
   color: var(--violet);
   font-size: 0.78rem;
-  writing-mode: vertical-rl;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .about-teaser-copy {
@@ -768,7 +845,7 @@ p {
 }
 
 .site-footer .brand-logo {
-  width: clamp(180px, 20vw, 248px);
+  width: clamp(145px, 16vw, 190px);
 }
 
 .site-footer-main > p {
@@ -839,7 +916,7 @@ p {
   max-width: 1050px;
   margin-bottom: 32px;
   color: var(--violet);
-  font-size: clamp(3.5rem, 6.8vw, 7rem);
+  font-size: clamp(3rem, 5.4vw, 5.75rem);
 }
 
 .report-hero-main > p:last-child {
@@ -867,6 +944,12 @@ p {
 .report-hero-meta span {
   color: var(--muted);
   font-size: 0.72rem;
+}
+
+.report-meta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
 }
 
 .report-hero-meta strong {
@@ -1003,14 +1086,21 @@ p {
 
 .standout-stats strong {
   color: var(--violet);
-  font-size: clamp(3.4rem, 7vw, 7.2rem);
+  font-size: clamp(3.1rem, 5.7vw, 6rem);
   font-weight: 570;
   letter-spacing: -0.075em;
   line-height: 0.9;
 }
 
-.standout-stats .section-label {
-  margin-bottom: 50px;
+.stat-meta {
+  display: flex;
+  margin-bottom: 42px;
+  align-items: center;
+  gap: 13px;
+}
+
+.stat-meta .section-label {
+  margin: 0;
 }
 
 .standout-stats p {
@@ -1136,11 +1226,22 @@ p {
   border-right: 0;
 }
 
+.challenge-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 34px;
+  border: 1px solid rgba(185, 176, 255, 0.42);
+  border-radius: 50%;
+  color: var(--violet-soft);
+  place-items: center;
+}
+
 .challenge-stat strong {
   display: block;
-  margin-bottom: 96px;
+  margin-bottom: 46px;
   color: var(--violet-soft);
-  font-size: clamp(3rem, 5vw, 5.8rem);
+  font-size: clamp(2.8rem, 4.4vw, 5rem);
   font-weight: 570;
   letter-spacing: -0.07em;
   line-height: 1;
@@ -1174,14 +1275,25 @@ p {
   min-height: 160px;
   padding: 30px 0;
   border-bottom: 1px solid var(--line);
-  grid-template-columns: 54px 0.55fr 1fr;
+  grid-template-columns: 58px 0.55fr 1fr;
   gap: 22px;
   align-items: start;
 }
 
-.public-space-list span {
+.public-space-icon {
+  display: flex;
+  width: 38px;
+  min-height: 50px;
   color: var(--violet);
-  font-size: 0.7rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.public-space-icon small {
+  color: var(--muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
 }
 
 .public-space-list h3,
@@ -1228,19 +1340,27 @@ p {
   min-height: 148px;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 70px 1fr;
   gap: 16px;
 }
 
-.recommendations-list li > span {
-  display: grid;
-  width: 42px;
-  height: 42px;
+.recommendation-marker {
+  display: flex;
+  width: 48px;
+  height: 58px;
   border: 1px solid var(--violet-soft);
-  border-radius: 50%;
+  border-radius: 999px;
   color: var(--violet);
-  font-size: 0.72rem;
-  place-items: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.recommendation-marker small {
+  color: var(--muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
 }
 
 .recommendations-list h3 {
@@ -1267,7 +1387,7 @@ p {
 
 .report-conclusion h2 {
   color: var(--violet);
-  font-size: clamp(3.1rem, 6.2vw, 7rem);
+  font-size: clamp(2.75rem, 5vw, 5.6rem);
 }
 
 .report-conclusion .button {
@@ -1298,7 +1418,7 @@ p {
 .about-hero-copy h1 {
   margin-bottom: 0;
   color: var(--violet);
-  font-size: clamp(3.5rem, 6.5vw, 7rem);
+  font-size: clamp(3rem, 5.2vw, 5.7rem);
 }
 
 .about-hero-intro {
@@ -1664,12 +1784,16 @@ p {
     --page-pad: 22px;
   }
 
+  h2 {
+    font-size: clamp(2.1rem, 10vw, 3.35rem);
+  }
+
   .brand {
     display: inline-flex;
   }
 
   .brand-logo {
-    width: 140px;
+    width: 112px;
   }
 
   .home-hero {
@@ -1688,7 +1812,7 @@ p {
   }
 
   .home-hero h1 {
-    font-size: clamp(3.15rem, 15vw, 4.7rem);
+    font-size: clamp(2.7rem, 12.5vw, 4rem);
   }
 
   .hero-actions {
@@ -1715,6 +1839,11 @@ p {
     border-bottom: 1px solid var(--line);
   }
 
+  .metric-header,
+  .stat-meta {
+    margin-bottom: 28px;
+  }
+
   .donut {
     min-height: 360px;
   }
@@ -1739,11 +1868,17 @@ p {
   }
 
   .importance-item h3 {
-    margin-top: 44px;
+    margin-top: 34px;
   }
 
   .priority-list li {
-    grid-template-columns: 44px 1fr auto;
+    min-height: 96px;
+    grid-template-columns: 34px 42px 1fr auto;
+  }
+
+  .priority-list .priority-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .about-teaser {
@@ -1766,13 +1901,17 @@ p {
     gap: 56px;
   }
 
+  .site-footer .brand-logo {
+    width: 138px;
+  }
+
   .report-hero {
     min-height: auto;
     padding-block: 80px;
   }
 
   .report-hero-main h1 {
-    font-size: clamp(3.1rem, 13vw, 4.4rem);
+    font-size: clamp(2.65rem, 11.5vw, 3.9rem);
   }
 
   .horizontal-chart {
@@ -1789,7 +1928,7 @@ p {
   }
 
   .public-space-list .reveal {
-    grid-template-columns: 42px 1fr;
+    grid-template-columns: 50px 1fr;
   }
 
   .public-space-list p {
@@ -1815,7 +1954,7 @@ p {
   }
 
   .about-hero-copy h1 {
-    font-size: clamp(3.1rem, 13vw, 4.5rem);
+    font-size: clamp(2.7rem, 11.5vw, 3.95rem);
   }
 
   .about-hero-intro {

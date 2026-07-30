@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  BriefcaseBusiness,
+  CalendarRange,
+  CarFront,
+  Clock3,
+  GraduationCap,
+  MessageSquareText,
+  MessageSquareWarning,
+  Route,
+  ScanSearch,
+  ShieldCheck,
+  TrendingUp,
+  UsersRound,
+  Wheat,
+} from "lucide-react";
 import { Reveal } from "../components/Reveal";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -27,22 +42,27 @@ const localProducts = [
 
 const recommendations = [
   {
+    icon: CarFront,
     title: "Përmirësimi i qasjes dhe parkingut",
     text: "Investime në infrastrukturë, rrugë këmbësorësh dhe hapësira parkimi pranë Qendrës Historike.",
   },
   {
+    icon: ShieldCheck,
     title: "Menaxhimi i hapësirës publike dhe sigurisë",
     text: "Rregullim i qartë i hapësirave të jashtme, ndriçimit dhe sigurisë urbane.",
   },
   {
+    icon: GraduationCap,
     title: "Trajnime për staf dhe ngritje profesionalizmi",
     text: "Program i vazhdueshëm për shërbim, gjuhë, higjienë dhe menaxhim sezonal.",
   },
   {
+    icon: MessageSquareText,
     title: "Komunikim institucional me bizneset",
     text: "Kanale të qarta komunikimi ndërmjet komunës, institucioneve dhe bizneseve.",
   },
   {
+    icon: Wheat,
     title: "Promovimi i produkteve vendore dhe gastronomisë",
     text: "Integrim i gastronomisë lokale në festivalet dhe ngjarjet kulturore të Prizrenit.",
   },
@@ -69,15 +89,24 @@ export default function ResearchPage() {
             </div>
             <div className="report-hero-meta hero-enter hero-enter-2">
               <div>
-                <span>Mostra</span>
+                <span className="report-meta-label">
+                  <BriefcaseBusiness aria-hidden="true" size={16} strokeWidth={1.7} />
+                  Mostra
+                </span>
                 <strong>40 biznese</strong>
               </div>
               <div>
-                <span>Mbulimi</span>
+                <span className="report-meta-label">
+                  <ScanSearch aria-hidden="true" size={16} strokeWidth={1.7} />
+                  Mbulimi
+                </span>
                 <strong>Rreth 80%</strong>
               </div>
               <div>
-                <span>Terreni</span>
+                <span className="report-meta-label">
+                  <CalendarRange aria-hidden="true" size={16} strokeWidth={1.7} />
+                  Terreni
+                </span>
                 <strong>27.02 - 03.04.2026</strong>
               </div>
             </div>
@@ -142,17 +171,32 @@ export default function ResearchPage() {
 
           <section className="section standout-stats">
             <Reveal>
-              <span className="section-label">Përvoja në treg</span>
+              <div className="stat-meta">
+                <span className="stat-icon">
+                  <Clock3 aria-hidden="true" size={18} strokeWidth={1.7} />
+                </span>
+                <span className="section-label">Përvoja në treg</span>
+              </div>
               <strong>65%</strong>
               <p>operojnë prej më shumë se 10 vjetësh</p>
             </Reveal>
             <Reveal delay={80}>
-              <span className="section-label">Sezoni dhe të ardhurat</span>
+              <div className="stat-meta">
+                <span className="stat-icon">
+                  <TrendingUp aria-hidden="true" size={18} strokeWidth={1.7} />
+                </span>
+                <span className="section-label">Sezoni dhe të ardhurat</span>
+              </div>
               <strong>87.5%</strong>
               <p>raportojnë rritje mbi 31% gjatë sezonit veror</p>
             </Reveal>
             <Reveal delay={160}>
-              <span className="section-label">Madhësia</span>
+              <div className="stat-meta">
+                <span className="stat-icon">
+                  <UsersRound aria-hidden="true" size={18} strokeWidth={1.7} />
+                </span>
+                <span className="section-label">Madhësia</span>
+              </div>
               <strong>87.5%</strong>
               <p>kanë deri në 10 punonjës</p>
             </Reveal>
@@ -192,6 +236,9 @@ export default function ResearchPage() {
             </Reveal>
             <div className="challenge-grid">
               <Reveal className="challenge-stat">
+                <span className="challenge-icon">
+                  <CarFront aria-hidden="true" size={20} strokeWidth={1.6} />
+                </span>
                 <strong>4.67/5</strong>
                 <h3>Parkingu</h3>
                 <p>
@@ -200,6 +247,9 @@ export default function ResearchPage() {
                 </p>
               </Reveal>
               <Reveal className="challenge-stat" delay={80}>
+                <span className="challenge-icon">
+                  <UsersRound aria-hidden="true" size={20} strokeWidth={1.6} />
+                </span>
                 <strong>77.5%</strong>
                 <h3>Mungesa e stafit</h3>
                 <p>
@@ -208,6 +258,9 @@ export default function ResearchPage() {
                 </p>
               </Reveal>
               <Reveal className="challenge-stat" delay={160}>
+                <span className="challenge-icon">
+                  <MessageSquareWarning aria-hidden="true" size={20} strokeWidth={1.6} />
+                </span>
                 <strong>72.5%</strong>
                 <h3>Pa udhëzime</h3>
                 <p>
@@ -225,7 +278,10 @@ export default function ResearchPage() {
             </Reveal>
             <div className="public-space-list">
               <Reveal>
-                <span>01</span>
+                <span className="public-space-icon">
+                  <CarFront aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <small>01</small>
+                </span>
                 <h3>Trafiku dhe parkimi</h3>
                 <p>
                   Automjetet në hapësirat këmbësore pengojnë lëvizjen e lirë
@@ -233,7 +289,10 @@ export default function ResearchPage() {
                 </p>
               </Reveal>
               <Reveal delay={70}>
-                <span>02</span>
+                <span className="public-space-icon">
+                  <ShieldCheck aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <small>02</small>
+                </span>
                 <h3>Siguria urbane</h3>
                 <p>
                   Pasiguria e perceptuar dëmton imazhin dhe cilësinë e
@@ -241,7 +300,10 @@ export default function ResearchPage() {
                 </p>
               </Reveal>
               <Reveal delay={140}>
-                <span>03</span>
+                <span className="public-space-icon">
+                  <Route aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <small>03</small>
+                </span>
                 <h3>Organizimi i zonës</h3>
                 <p>
                   Menaxhimi jo koherent i hapësirës historike ul cilësinë e
@@ -260,7 +322,10 @@ export default function ResearchPage() {
               {recommendations.map((item, index) => (
                 <Reveal delay={index * 45} key={item.title}>
                   <li>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <span className="recommendation-marker">
+                      <item.icon aria-hidden="true" size={19} strokeWidth={1.65} />
+                      <small>{String(index + 1).padStart(2, "0")}</small>
+                    </span>
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.text}</p>
