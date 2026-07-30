@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
-
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -63,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sq">
-      <body className={geist.variable}>
+      <body suppressHydrationWarning>
         <a className="skip-link" href="#main">
           Kalo te përmbajtja
         </a>
