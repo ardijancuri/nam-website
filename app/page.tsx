@@ -18,6 +18,7 @@ import {
 import { Reveal } from "./components/Reveal";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
+import { StatMetric } from "./components/StatMetric";
 
 const importance = [
   {
@@ -123,43 +124,31 @@ export default function Home() {
 
           <div className="publication-metrics" aria-label="Të dhënat kryesore">
             <Reveal delay={40}>
-              <div className="metric-header">
-                <span className="metric-icon" aria-hidden="true">
-                  <BriefcaseBusiness size={18} strokeWidth={1.7} />
-                </span>
-                <span className="metric-context">Mostra</span>
-              </div>
-              <span className="metric-value">40</span>
-              <span className="metric-label">biznese në mostër</span>
-              <span className="metric-rule" aria-hidden="true">
-                <span style={{ width: "100%" }} />
-              </span>
+              <StatMetric
+                context="Mostra"
+                icon={BriefcaseBusiness}
+                label="biznese në mostër"
+                progress={100}
+                value="40"
+              />
             </Reveal>
             <Reveal delay={100}>
-              <div className="metric-header">
-                <span className="metric-icon" aria-hidden="true">
-                  <ScanSearch size={18} strokeWidth={1.7} />
-                </span>
-                <span className="metric-context">Mbulimi</span>
-              </div>
-              <span className="metric-value">~80%</span>
-              <span className="metric-label">mbulim i sektorit në zonë</span>
-              <span className="metric-rule" aria-hidden="true">
-                <span style={{ width: "80%" }} />
-              </span>
+              <StatMetric
+                context="Mbulimi"
+                icon={ScanSearch}
+                label="mbulim i sektorit në zonë"
+                progress={80}
+                value="~80%"
+              />
             </Reveal>
             <Reveal delay={160}>
-              <div className="metric-header">
-                <span className="metric-icon" aria-hidden="true">
-                  <CalendarRange size={18} strokeWidth={1.7} />
-                </span>
-                <span className="metric-context">Terreni</span>
-              </div>
-              <span className="metric-value">36</span>
-              <span className="metric-label">ditë punë në terren</span>
-              <span className="metric-rule" aria-hidden="true">
-                <span style={{ width: "64%" }} />
-              </span>
+              <StatMetric
+                context="Terreni"
+                icon={CalendarRange}
+                label="ditë punë në terren"
+                progress={64}
+                value="36"
+              />
             </Reveal>
           </div>
         </section>
@@ -226,8 +215,9 @@ export default function Home() {
               <div>
                 <UsersRound
                   className="donut-icon"
-                  size={24}
-                  strokeWidth={1.6}
+                  fill="currentColor"
+                  size={32}
+                  strokeWidth={1.2}
                   aria-hidden="true"
                 />
                 <strong>77.5%</strong>
@@ -236,7 +226,12 @@ export default function Home() {
             </div>
             <div className="mini-stat">
               <div className="mini-stat-top">
-                <CarFront size={19} strokeWidth={1.7} aria-hidden="true" />
+                <CarFront
+                  fill="currentColor"
+                  size={28}
+                  strokeWidth={1.2}
+                  aria-hidden="true"
+                />
                 <strong>4.67 / 5</strong>
               </div>
               <span>Parkingu - pengesa më e madhe</span>
@@ -244,8 +239,9 @@ export default function Home() {
             <div className="mini-stat">
               <div className="mini-stat-top">
                 <MessageSquareText
-                  size={19}
-                  strokeWidth={1.7}
+                  fill="currentColor"
+                  size={28}
+                  strokeWidth={1.2}
                   aria-hidden="true"
                 />
                 <strong>72.5%</strong>
@@ -276,7 +272,12 @@ export default function Home() {
               >
                 <div className="importance-item-top">
                   <span>{item.number}</span>
-                  <item.icon size={22} strokeWidth={1.6} aria-hidden="true" />
+                  <item.icon
+                    fill="currentColor"
+                    size={30}
+                    strokeWidth={1.2}
+                    aria-hidden="true"
+                  />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
@@ -301,7 +302,11 @@ export default function Home() {
                 <li>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <span className="priority-icon" aria-hidden="true">
-                    <priority.icon size={20} strokeWidth={1.6} />
+                    <priority.icon
+                      fill="currentColor"
+                      size={30}
+                      strokeWidth={1.2}
+                    />
                   </span>
                   <strong>{priority.title}</strong>
                   <span aria-hidden="true">↗</span>

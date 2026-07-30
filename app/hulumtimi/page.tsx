@@ -18,6 +18,9 @@ import {
 import { Reveal } from "../components/Reveal";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { StatMetric } from "../components/StatMetric";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 
 export const metadata: Metadata = {
   title: "Hulumtimi i gastronomisë në Prizren",
@@ -90,21 +93,36 @@ export default function ResearchPage() {
             <div className="report-hero-meta hero-enter hero-enter-2">
               <div>
                 <span className="report-meta-label">
-                  <BriefcaseBusiness aria-hidden="true" size={16} strokeWidth={1.7} />
+                  <BriefcaseBusiness
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={20}
+                    strokeWidth={1.2}
+                  />
                   Mostra
                 </span>
                 <strong>40 biznese</strong>
               </div>
               <div>
                 <span className="report-meta-label">
-                  <ScanSearch aria-hidden="true" size={16} strokeWidth={1.7} />
+                  <ScanSearch
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={20}
+                    strokeWidth={1.2}
+                  />
                   Mbulimi
                 </span>
                 <strong>Rreth 80%</strong>
               </div>
               <div>
                 <span className="report-meta-label">
-                  <CalendarRange aria-hidden="true" size={16} strokeWidth={1.7} />
+                  <CalendarRange
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={20}
+                    strokeWidth={1.2}
+                  />
                   Terreni
                 </span>
                 <strong>27.02 - 03.04.2026</strong>
@@ -190,48 +208,51 @@ export default function ResearchPage() {
                     <span>{item.label}</span>
                     <strong>{item.value}%</strong>
                   </div>
-                  <div className="bar-track">
-                    <span style={{ width: `${item.value}%` }} />
-                  </div>
+                  <Progress
+                    aria-label={`${item.label}: ${item.value}%`}
+                    className="bar-track"
+                    indicatorClassName="bar-track-fill"
+                    value={item.value}
+                  />
                 </div>
               ))}
-              <p className="chart-note">
-                Vetëm 22.5% janë restorante - një tregues i potencialit të
-                pashfrytëzuar për diversifikim.
-              </p>
+              <div className="chart-note">
+                <Badge variant="insight">Gjetje kryesore</Badge>
+                <p>
+                  Vetëm 22.5% janë restorante - një tregues i potencialit të
+                  pashfrytëzuar për diversifikim.
+                </p>
+              </div>
             </Reveal>
           </section>
 
           <section className="section standout-stats">
             <Reveal>
-              <div className="stat-meta">
-                <span className="stat-icon">
-                  <Clock3 aria-hidden="true" size={18} strokeWidth={1.7} />
-                </span>
-                <span className="section-label">Përvoja në treg</span>
-              </div>
-              <strong>65%</strong>
-              <p>operojnë prej më shumë se 10 vjetësh</p>
+              <StatMetric
+                context="Përvoja në treg"
+                icon={Clock3}
+                label="operojnë prej më shumë se 10 vjetësh"
+                progress={65}
+                value="65%"
+              />
             </Reveal>
             <Reveal delay={80}>
-              <div className="stat-meta">
-                <span className="stat-icon">
-                  <TrendingUp aria-hidden="true" size={18} strokeWidth={1.7} />
-                </span>
-                <span className="section-label">Sezoni dhe të ardhurat</span>
-              </div>
-              <strong>87.5%</strong>
-              <p>raportojnë rritje mbi 31% gjatë sezonit veror</p>
+              <StatMetric
+                context="Sezoni dhe të ardhurat"
+                icon={TrendingUp}
+                label="raportojnë rritje mbi 31% gjatë sezonit veror"
+                progress={87.5}
+                value="87.5%"
+              />
             </Reveal>
             <Reveal delay={160}>
-              <div className="stat-meta">
-                <span className="stat-icon">
-                  <UsersRound aria-hidden="true" size={18} strokeWidth={1.7} />
-                </span>
-                <span className="section-label">Madhësia</span>
-              </div>
-              <strong>87.5%</strong>
-              <p>kanë deri në 10 punonjës</p>
+              <StatMetric
+                context="Madhësia"
+                icon={UsersRound}
+                label="kanë deri në 10 punonjës"
+                progress={87.5}
+                value="87.5%"
+              />
             </Reveal>
           </section>
 
@@ -270,7 +291,12 @@ export default function ResearchPage() {
             <div className="challenge-grid">
               <Reveal className="challenge-stat">
                 <span className="challenge-icon">
-                  <CarFront aria-hidden="true" size={20} strokeWidth={1.6} />
+                  <CarFront
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={34}
+                    strokeWidth={1.2}
+                  />
                 </span>
                 <strong>4.67/5</strong>
                 <h3>Parkingu</h3>
@@ -281,7 +307,12 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal className="challenge-stat" delay={80}>
                 <span className="challenge-icon">
-                  <UsersRound aria-hidden="true" size={20} strokeWidth={1.6} />
+                  <UsersRound
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={34}
+                    strokeWidth={1.2}
+                  />
                 </span>
                 <strong>77.5%</strong>
                 <h3>Mungesa e stafit</h3>
@@ -292,7 +323,12 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal className="challenge-stat" delay={160}>
                 <span className="challenge-icon">
-                  <MessageSquareWarning aria-hidden="true" size={20} strokeWidth={1.6} />
+                  <MessageSquareWarning
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={34}
+                    strokeWidth={1.2}
+                  />
                 </span>
                 <strong>72.5%</strong>
                 <h3>Pa udhëzime</h3>
@@ -312,7 +348,12 @@ export default function ResearchPage() {
             <div className="public-space-list">
               <Reveal>
                 <span className="public-space-icon">
-                  <CarFront aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <CarFront
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={30}
+                    strokeWidth={1.2}
+                  />
                   <small>01</small>
                 </span>
                 <h3>Trafiku dhe parkimi</h3>
@@ -323,7 +364,12 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal delay={70}>
                 <span className="public-space-icon">
-                  <ShieldCheck aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <ShieldCheck
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={30}
+                    strokeWidth={1.2}
+                  />
                   <small>02</small>
                 </span>
                 <h3>Siguria urbane</h3>
@@ -334,7 +380,12 @@ export default function ResearchPage() {
               </Reveal>
               <Reveal delay={140}>
                 <span className="public-space-icon">
-                  <Route aria-hidden="true" size={19} strokeWidth={1.65} />
+                  <Route
+                    aria-hidden="true"
+                    fill="currentColor"
+                    size={30}
+                    strokeWidth={1.2}
+                  />
                   <small>03</small>
                 </span>
                 <h3>Organizimi i zonës</h3>
@@ -356,7 +407,12 @@ export default function ResearchPage() {
                 <Reveal delay={index * 45} key={item.title}>
                   <li>
                     <span className="recommendation-marker">
-                      <item.icon aria-hidden="true" size={19} strokeWidth={1.65} />
+                      <item.icon
+                        aria-hidden="true"
+                        fill="currentColor"
+                        size={30}
+                        strokeWidth={1.2}
+                      />
                       <small>{String(index + 1).padStart(2, "0")}</small>
                     </span>
                     <div>
