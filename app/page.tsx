@@ -148,40 +148,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className="photo-chapter photo-chapter-home"
-          aria-labelledby="gastronomy-identity-title"
-        >
-          <Reveal className="photo-chapter-frame">
-            <figure>
-              <div className="photo-chapter-media">
-                <img
-                  src="/prizren-heritage-gastronomy.webp"
-                  alt="Restorant me tarracë pranë arkitekturës historike të Prizrenit"
-                  width="1600"
-                  height="1066"
-                  loading="lazy"
-                />
-              </div>
-              <figcaption className="photo-chapter-caption">
-                <span className="photo-chapter-index">02 / Prizren</span>
-                <div>
-                  <p className="section-label">Identiteti gastronomik</p>
-                  <h2 id="gastronomy-identity-title">
-                    Trashëgimia dhe mikpritja
-                    <br />
-                    ndajnë të njëjtën hapësirë.
-                  </h2>
-                </div>
-                <p>
-                  Oferta gastronomike e Qendrës Historike është pjesë e
-                  përvojës kulturore dhe urbane të qytetit.
-                </p>
-              </figcaption>
-            </figure>
-          </Reveal>
-        </section>
-
         <section className="section data-feature">
           <div className="data-feature-copy">
             <Reveal>
