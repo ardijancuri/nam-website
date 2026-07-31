@@ -27,26 +27,42 @@ export default function AboutPage() {
       <div className="light-page-shell">
         <SiteHeader />
         <main id="main">
-          <section className="about-hero section">
-            <div className="about-hero-index hero-enter hero-enter-1">
-              <span>Rreth nesh</span>
-              <span>01 — 04</span>
+          <section className="about-hero" aria-labelledby="about-hero-title">
+            <div className="about-hero-media">
+              <img
+                src="/prizren-stone-bridge-evening.webp"
+                alt="Ura e Gurit dhe qendra historike e Prizrenit në mbrëmje"
+                width="1600"
+                height="1066"
+                fetchPriority="high"
+              />
             </div>
-            <div className="about-hero-copy hero-enter hero-enter-2">
-              <p className="section-label">
-                Instituti për Turizëm dhe Kulturë NAM
-              </p>
-              <h1>
-                Njohuri, të dhëna dhe ekspertizë për zhvillimin e turizmit në
-                Kosovë.
-              </h1>
+            <div className="about-hero-shade" aria-hidden="true" />
+            <div className="about-hero-inner">
+              <div className="about-hero-index hero-enter hero-enter-1">
+                <span>Rreth nesh</span>
+                <span>01 / 04</span>
+              </div>
+              <div className="about-hero-layout">
+                <div className="about-hero-copy hero-enter hero-enter-2">
+                  <p className="section-label">
+                    Instituti për Turizëm dhe Kulturë NAM
+                  </p>
+                  <h1 id="about-hero-title">
+                    Njohuri, të dhëna dhe ekspertizë për zhvillimin e turizmit
+                    në Kosovë.
+                  </h1>
+                </div>
+                <div className="about-hero-intro hero-enter hero-enter-3">
+                  <span>Prizren · 2026</span>
+                  <p>
+                    NAM është institut i pavarur kërkimor dhe profesional që
+                    avancon turizmin përmes hulumtimit, analizës, të dhënave
+                    dhe bashkëpunimit ndërsektorial.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="about-hero-intro hero-enter hero-enter-3">
-              NAM është institut i pavarur kërkimor dhe profesional, i
-              themeluar në vitin 2026, me qëllim të avancimit të turizmit
-              përmes hulumtimit, analizës, të dhënave dhe bashkëpunimit
-              ndërsektorial.
-            </p>
           </section>
 
           <section className="section about-story">
