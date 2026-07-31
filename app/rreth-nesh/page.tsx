@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "../components/Reveal";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -175,7 +176,13 @@ export default function AboutPage() {
                 planifikim dhe zhvillim të destinacioneve.
               </p>
               <Link className="button button-light" href="/hulumtimi">
-                Shiko hulumtimin tonë <span aria-hidden="true">→</span>
+                Shiko hulumtimin tonë
+                <ArrowRight
+                  className="direction-icon"
+                  size={19}
+                  weight="bold"
+                  aria-hidden="true"
+                />
               </Link>
             </Reveal>
           </section>

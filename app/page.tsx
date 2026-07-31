@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowRight,
   Bank,
   Briefcase,
   Buildings,
@@ -77,10 +78,22 @@ export default function Home() {
           </p>
           <div className="hero-actions hero-enter hero-enter-4">
             <Link className="button button-light" href="/hulumtimi">
-              Shfleto hulumtimin <span aria-hidden="true">↗</span>
+              Hulumtimi
+              <ArrowRight
+                className="direction-icon"
+                size={19}
+                weight="bold"
+                aria-hidden="true"
+              />
             </Link>
             <Link className="text-link text-link-light" href="/rreth-nesh">
-              Njihuni me NAM <span aria-hidden="true">→</span>
+              Njihuni me NAM
+              <ArrowRight
+                className="direction-icon"
+                size={18}
+                weight="bold"
+                aria-hidden="true"
+              />
             </Link>
           </div>
         </div>
@@ -113,7 +126,13 @@ export default function Home() {
               një nivel më të lartë.
             </p>
             <Link className="text-link" href="/hulumtimi">
-              Lexo analizën e plotë <span aria-hidden="true">→</span>
+              Lexo analizën e plotë
+              <ArrowRight
+                className="direction-icon"
+                size={18}
+                weight="bold"
+                aria-hidden="true"
+              />
             </Link>
           </Reveal>
 
@@ -263,7 +282,12 @@ export default function Home() {
                     />
                   </span>
                   <strong>{priority.title}</strong>
-                  <span aria-hidden="true">↗</span>
+                  <ArrowRight
+                    className="direction-icon priority-direction-icon"
+                    size={22}
+                    weight="bold"
+                    aria-hidden="true"
+                  />
                 </li>
               </Reveal>
             ))}
@@ -294,7 +318,13 @@ export default function Home() {
               për të mbështetur institucione, biznese dhe komunitete.
             </p>
             <Link className="button button-primary" href="/rreth-nesh">
-              Më shumë për ne <span aria-hidden="true">→</span>
+              Më shumë për ne
+              <ArrowRight
+                className="direction-icon"
+                size={19}
+                weight="bold"
+                aria-hidden="true"
+              />
             </Link>
           </Reveal>
         </section>

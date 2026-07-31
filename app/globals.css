@@ -160,6 +160,16 @@ p {
   transform: translateY(-2px);
 }
 
+.direction-icon {
+  flex: 0 0 auto;
+  transition: transform 180ms ease;
+}
+
+.button:hover .direction-icon,
+.text-link:hover .direction-icon {
+  transform: translateX(4px);
+}
+
 .button-primary {
   background: var(--violet);
   color: var(--white);
@@ -786,6 +796,18 @@ p {
   font-size: clamp(1.1rem, 1.7vw, 1.55rem);
   font-weight: 520;
   letter-spacing: -0.025em;
+}
+
+.priority-list .priority-direction-icon {
+  color: rgba(255, 255, 255, 0.48);
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.priority-list li:hover .priority-direction-icon {
+  color: var(--white);
+  transform: translateX(4px);
 }
 
 .priority-list li span:last-child {
