@@ -61,13 +61,15 @@ test("removes the standalone research route and renders the about route", async 
 });
 
 test("starter preview and dependency are removed", async () => {
-  const [page, layout, packageJson] = await Promise.all([
+  const [page, layout, siteHeader, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/components/SiteHeader.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(layout, /Starter Project|codex-preview/);
+  assert.doesNotMatch(siteHeader, /Përmbledhja e hulumtimit/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

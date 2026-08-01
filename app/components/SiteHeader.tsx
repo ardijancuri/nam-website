@@ -29,7 +29,6 @@ export function SiteHeader({ tone = "light" }: SiteHeaderProps) {
 
         <nav className="desktop-nav" aria-label="Navigimi kryesor">
           <Link href="/">Ballina</Link>
-          <Link href="/#permbledhja">Përmbledhja e hulumtimit</Link>
           <Link href="/rreth-nesh">Rreth nesh</Link>
         </nav>
 
@@ -40,7 +39,6 @@ export function SiteHeader({ tone = "light" }: SiteHeaderProps) {
           </summary>
           <nav aria-label="Navigimi për celular">
             <Link href="/">Ballina</Link>
-            <Link href="/#permbledhja">Përmbledhja e hulumtimit</Link>
             <Link href="/rreth-nesh">Rreth nesh</Link>
           </nav>
         </details>
