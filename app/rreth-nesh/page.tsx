@@ -215,7 +215,7 @@ export default function AboutPage() {
                 Synojmë të vendosim standarde më të larta në hulumtim, analizë,
                 planifikim dhe zhvillim të destinacioneve.
               </p>
-              <Link className="button button-light" href="/hulumtimi">
+              <Link className="button button-light" href="/#permbledhja">
                 Shiko hulumtimin tonë
                 <ArrowRight
                   className="direction-icon"

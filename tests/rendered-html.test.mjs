@@ -43,20 +43,17 @@ test("server-renders the NAM homepage", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
-test("server-renders the research and about routes", async () => {
-  const [research, about] = await Promise.all([
+test("removes the standalone research route and renders the about route", async () => {
+  const [removedResearch, about] = await Promise.all([
     render("/hulumtimi"),
     render("/rreth-nesh"),
   ]);
 
-  assert.equal(research.status, 200);
+  assert.equal(removedResearch.status, 404);
   assert.equal(about.status, 200);
 
-  const researchHtml = await research.text();
   const aboutHtml = await about.text();
 
-  assert.match(researchHtml, /40 biznese/);
-  assert.doesNotMatch(researchHtml, /Zmadho/);
   assert.match(aboutHtml, /institut i pavarur kërkimor dhe profesional/i);
   assert.match(aboutHtml, /about-prizren-domes\.webp/);
   assert.match(aboutHtml, /about-field-research\.webp/);

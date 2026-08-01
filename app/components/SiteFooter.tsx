@@ -15,7 +15,7 @@ export function SiteFooter() {
         </a>
       </div>
       <div className="site-footer-links">
-        <Link href="/hulumtimi">Përmbledhja e hulumtimit</Link>
+        <Link href="/#permbledhja">Përmbledhja e hulumtimit</Link>
         <Link href="/rreth-nesh">Rreth nesh</Link>
         <Link href="/">Ballina</Link>
       </div>
