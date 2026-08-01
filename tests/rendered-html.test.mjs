@@ -31,7 +31,15 @@ test("server-renders the NAM homepage", async () => {
   const html = await response.text();
   assert.match(html, /Instituti për Turizëm dhe Kulturë/);
   assert.match(html, /Njohuri që i japin/);
+  assert.match(html, /Përmbledhja e hulumtimit/);
   assert.match(html, /Vlerësimi i gastronomisë/);
+  assert.match(html, /permbledhja-e-hulumtimit\.pdf/);
+  assert.match(html, /vleresimi-i-gastronomise\.pdf/);
+  const researchPageImages = new Set(
+    html.match(/research-report\/page-\d{2}\.png/g) ?? [],
+  );
+  assert.equal(researchPageImages.size, 25);
+  assert.match(html, /info@namins\.org/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
@@ -44,8 +52,15 @@ test("server-renders the research and about routes", async () => {
   assert.equal(research.status, 200);
   assert.equal(about.status, 200);
 
-  assert.match(await research.text(), /40 biznese/);
-  assert.match(await about.text(), /institut i pavarur kërkimor dhe profesional/i);
+  const researchHtml = await research.text();
+  const aboutHtml = await about.text();
+
+  assert.match(researchHtml, /40 biznese/);
+  assert.doesNotMatch(researchHtml, /Zmadho/);
+  assert.match(aboutHtml, /institut i pavarur kërkimor dhe profesional/i);
+  assert.match(aboutHtml, /about-prizren-domes\.webp/);
+  assert.match(aboutHtml, /about-field-research\.webp/);
+  assert.match(aboutHtml, /01 \/ 05/);
 });
 
 test("starter preview and dependency are removed", async () => {

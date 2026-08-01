@@ -10,9 +10,12 @@ export function SiteFooter() {
           Njohuri, të dhëna dhe ekspertizë për zhvillimin e turizmit në
           Kosovë.
         </p>
+        <a className="site-footer-email" href="mailto:info@namins.org">
+          info@namins.org
+        </a>
       </div>
       <div className="site-footer-links">
-        <Link href="/hulumtimi">Hulumtimi</Link>
+        <Link href="/hulumtimi">Përmbledhja e hulumtimit</Link>
         <Link href="/rreth-nesh">Rreth nesh</Link>
         <Link href="/">Ballina</Link>
       </div>

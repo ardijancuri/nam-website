@@ -412,6 +412,40 @@ p {
   gap: 32px;
 }
 
+.home-hero-document-actions {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-document-button {
+  min-height: 64px;
+  padding-inline: 24px;
+  font-size: 1rem;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.hero-document-button > svg:last-child {
+  margin-left: 4px;
+  transition: transform 180ms ease;
+}
+
+.hero-document-button:hover > svg:last-child {
+  transform: translate(3px, -3px);
+}
+
+.button-ghost-light {
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(17, 16, 56, 0.28);
+  color: var(--white);
+  backdrop-filter: blur(12px);
+}
+
+.button-ghost-light:hover {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.14);
+}
+
 .hero-index {
   position: absolute;
   right: var(--page-pad);
@@ -428,6 +462,93 @@ p {
   width: 70px;
   height: 1px;
   background: rgba(255, 255, 255, 0.5);
+}
+
+/* Homepage research narrative */
+
+.home-research-story {
+  width: 100%;
+  overflow: hidden;
+  background: #f9f9fe;
+}
+
+.home-report-section {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  background: #f9f9fe;
+  place-items: center;
+}
+
+.home-report-section img {
+  display: block;
+  width: min(100%, 1684px);
+  height: auto;
+}
+
+.research-photo-interlude,
+.research-photo-interlude figure {
+  width: 100%;
+  margin: 0;
+}
+
+.research-photo-interlude figure {
+  position: relative;
+  min-height: clamp(560px, 72svh, 900px);
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.research-photo-interlude figure::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(15, 16, 55, 0.82), transparent 58%);
+  content: "";
+}
+
+.research-photo-interlude img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.research-photo-interlude:hover img {
+  transform: scale(1.018);
+}
+
+.research-photo-interlude figcaption {
+  position: absolute;
+  z-index: 2;
+  right: max(var(--page-pad), calc((100vw - var(--section-width)) / 2 + var(--page-pad)));
+  bottom: clamp(44px, 7vw, 88px);
+  left: max(var(--page-pad), calc((100vw - var(--section-width)) / 2 + var(--page-pad)));
+  display: grid;
+  color: var(--white);
+  grid-template-columns: 0.35fr 1fr;
+  align-items: end;
+  gap: clamp(30px, 6vw, 100px);
+}
+
+.research-photo-interlude figcaption span {
+  font-size: 0.68rem;
+  font-weight: 660;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.research-photo-interlude figcaption p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.45rem, 3.3vw, 3.25rem);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 /* Homepage publication */
@@ -879,6 +1000,19 @@ p {
   font-size: 1.1rem;
 }
 
+.site-footer-email {
+  display: inline-block;
+  margin-top: 24px;
+  color: var(--white);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 610;
+  transition: color 180ms ease;
+}
+
+.site-footer-email:hover {
+  color: var(--violet-soft);
+}
+
 .site-footer-links {
   display: flex;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -1030,7 +1164,7 @@ p {
   margin: 0;
 }
 
-.report-page-image-link {
+.report-page-image {
   position: relative;
   display: block;
   overflow: hidden;
@@ -1038,39 +1172,12 @@ p {
   box-shadow: 0 20px 58px rgba(23, 22, 75, 0.1);
 }
 
-.report-page-image-link img {
+.report-page-image img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 841.89 / 595.276;
   object-fit: contain;
-}
-
-.report-page-expand {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: inline-flex;
-  min-height: 38px;
-  padding: 0 12px;
-  border-radius: 4px;
-  background: rgba(23, 22, 75, 0.88);
-  color: var(--white);
-  font-size: 0.68rem;
-  font-weight: 650;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
-  align-items: center;
-  gap: 7px;
-}
-
-.report-page-image-link:hover .report-page-expand,
-.report-page-image-link:focus-visible .report-page-expand {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .report-page figcaption {
@@ -1892,7 +1999,7 @@ p {
 
 .about-work-heading {
   display: grid;
-  grid-row: span 2;
+  grid-row: span 3;
   align-content: start;
 }
 
@@ -1905,8 +2012,31 @@ p {
   color: var(--violet);
 }
 
+.about-work-media,
+.about-work-media figure {
+  margin: 0;
+}
+
+.about-work-media {
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.about-work-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8.6;
+  object-fit: cover;
+}
+
+.about-work-media figcaption {
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
 .field-list {
-  margin-top: 60px;
+  margin-top: 42px;
   display: grid;
   gap: 7px;
 }
@@ -1970,6 +2100,26 @@ p {
 
 .approach-content p {
   margin-bottom: 26px;
+}
+
+.approach-media {
+  grid-column: 1 / -1;
+  min-height: clamp(420px, 44vw, 680px);
+  overflow: hidden;
+}
+
+.approach-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center 46%;
+  transition: transform 1.1s cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.approach-media:hover img {
+  transform: scale(1.018);
 }
 
 .vision-section {
@@ -2228,6 +2378,7 @@ p {
   }
 
   .about-work-copy,
+  .about-work-media,
   .field-list {
     margin-left: calc(22% + 30px);
   }
@@ -2280,6 +2431,31 @@ p {
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .home-hero-document-actions {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-document-button {
+    width: min(100%, 420px);
+    min-height: 60px;
+    justify-content: flex-start;
+    white-space: normal;
+  }
+
+  .hero-document-button > svg:last-child {
+    margin-left: auto;
+  }
+
+  .research-photo-interlude figure {
+    min-height: 68svh;
+  }
+
+  .research-photo-interlude figcaption {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .hero-index {
@@ -2488,8 +2664,18 @@ p {
   }
 
   .about-work-copy,
+  .about-work-media,
   .field-list {
     margin-left: 0;
+  }
+
+  .about-work-media img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .approach-media {
+    min-height: 360px;
+    grid-column: auto;
   }
 
   .vision-section {
@@ -2530,17 +2716,8 @@ p {
     margin-bottom: 24px;
   }
 
-  .report-page-image-link {
+  .report-page-image {
     box-shadow: 0 12px 34px rgba(23, 22, 75, 0.11);
-  }
-
-  .report-page-expand {
-    top: 10px;
-    right: 10px;
-    min-height: 34px;
-    padding-inline: 10px;
-    opacity: 1;
-    transform: none;
   }
 
   .report-page figcaption {

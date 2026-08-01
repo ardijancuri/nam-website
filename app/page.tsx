@@ -1,61 +1,48 @@
-import Link from "next/link";
+import { Fragment } from "react";
 import {
-  ArrowRight,
-  Bank,
-  Briefcase,
-  Buildings,
-  CalendarDots,
-  Car,
-  ChartLineUp,
-  ChatsCircle,
-  GraduationCap,
-  Grains,
-  MapPin,
-  MagnifyingGlass,
-  Plant,
-  ShieldCheck,
-  UsersThree,
+  ArrowUpRight,
+  FilePdf,
 } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "./components/Reveal";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
-import { StatMetric } from "./components/StatMetric";
+import {
+  fullResearchPdfPath,
+  getResearchPageImage,
+  researchPages,
+  researchSummaryPdfPath,
+} from "./data/research";
 
-const importance = [
-  {
-    title: "Turizmi",
-    text: "Gastronomia ndikon në vendimin e vizitorëve për të qëndruar më gjatë.",
-    icon: MapPin,
+const researchInterludes = {
+  6: {
+    src: "/about-field-research.webp",
+    alt: "Ekip hulumtues duke mbledhur të dhëna në terren",
+    label: "Hulumtimi në terren",
+    caption:
+      "Të dhënat fillojnë me bisedën, vëzhgimin dhe kuptimin e përvojës lokale.",
   },
-  {
-    title: "Ekonomia lokale",
-    text: "Bizneset krijojnë vende pune dhe kontribuojnë në të ardhurat e komunës.",
-    icon: ChartLineUp,
+  12: {
+    src: "/prizren-stone-bridge-evening.webp",
+    alt: "Ura e Gurit dhe gastronomia e Prizrenit në mbrëmje",
+    label: "Sezonaliteti dhe qyteti",
+    caption:
+      "Mbrëmjet e Prizrenit tregojnë sa ngushtë lidhen gastronomia, hapësira publike dhe turizmi.",
   },
-  {
-    title: "Kultura",
-    text: "Ushqimi tradicional lidh brezat dhe tërheq turistët kulturorë.",
-    icon: Bank,
+  14: {
+    src: "/prizren-heritage-gastronomy.webp",
+    alt: "Restorant pranë arkitekturës historike të Prizrenit",
+    label: "Oferta vendore",
+    caption:
+      "Produktet, mikpritja dhe trashëgimia krijojnë një përvojë që i përket vetëm këtij vendi.",
   },
-  {
-    title: "Hapësira publike",
-    text: "Kafetë dhe restorantet aktivizojnë hapësirat historike të qytetit.",
-    icon: Buildings,
+  19: {
+    src: "/about-prizren-domes.webp",
+    alt: "Kupolat dhe minarja në Qendrën Historike të Prizrenit",
+    label: "Qendra Historike",
+    caption:
+      "Zhvillimi gastronomik duhet të ecë bashkë me ruajtjen e karakterit kulturor të qytetit.",
   },
-  {
-    title: "Vizitorët",
-    text: "Përvoja gastronomike formëson kënaqësinë dhe imazhin e Prizrenit.",
-    icon: UsersThree,
-  },
-];
-
-const priorities = [
-  { title: "Qasja dhe parkimi", icon: Car },
-  { title: "Menaxhimi i hapësirës publike", icon: ShieldCheck },
-  { title: "Trajnimi dhe profesionalizmi i stafit", icon: GraduationCap },
-  { title: "Komunikimi institucional", icon: ChatsCircle },
-  { title: "Produktet vendore dhe eventet", icon: Grains },
-];
+} as const;
 
 export default function Home() {
   return (
@@ -76,25 +63,27 @@ export default function Home() {
             Të dhëna, analiza dhe ekspertizë për destinacione me identitet,
             përvoja më të mira dhe zhvillim të qëndrueshëm.
           </p>
-          <div className="hero-actions hero-enter hero-enter-4">
-            <Link className="button button-light" href="/hulumtimi">
-              Hulumtimi
-              <ArrowRight
-                className="direction-icon"
-                size={19}
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Link>
-            <Link className="text-link text-link-light" href="/rreth-nesh">
-              Njihuni me NAM
-              <ArrowRight
-                className="direction-icon"
-                size={18}
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Link>
+          <div className="hero-actions home-hero-document-actions hero-enter hero-enter-4">
+            <a
+              className="button button-light hero-document-button"
+              href={researchSummaryPdfPath}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FilePdf size={24} weight="duotone" aria-hidden="true" />
+              <span>Përmbledhja e hulumtimit</span>
+              <ArrowUpRight size={20} weight="bold" aria-hidden="true" />
+            </a>
+            <a
+              className="button button-ghost-light hero-document-button"
+              href={fullResearchPdfPath}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FilePdf size={24} weight="duotone" aria-hidden="true" />
+              <span>Vlerësimi i gastronomisë</span>
+              <ArrowUpRight size={20} weight="bold" aria-hidden="true" />
+            </a>
           </div>
         </div>
         <div className="hero-index" aria-hidden="true">
@@ -105,228 +94,51 @@ export default function Home() {
       </section>
 
       <main id="main">
-        <section className="section publication-intro">
-          <Reveal className="publication-heading">
-            <p className="section-label">Hulumtimi i fundit</p>
-            <h2>
-              Vlerësimi i gastronomisë
-              <br />
-              në Qendrën Historike të Prizrenit
-            </h2>
-          </Reveal>
+        <section
+          className="home-research-story"
+          id="permbledhja"
+          aria-label="Përmbledhja e hulumtimit gastronomik"
+        >
+          {researchPages.map((title, index) => {
+            const pageNumber = index + 1;
+            const interlude =
+              researchInterludes[
+                pageNumber as keyof typeof researchInterludes
+              ];
 
-          <Reveal className="publication-summary" delay={100}>
-            <p className="large-copy">
-              Analizë statistikore e zgjeruar, e bazuar në të dhënat reale të
-              40 bizneseve gastronomike.
-            </p>
-            <p>
-              Sektori është funksional dhe relativisht stabil, por përballet
-              me kufizime strukturore dhe mjedisore që e pengojnë zhvillimin në
-              një nivel më të lartë.
-            </p>
-            <Link className="text-link" href="/hulumtimi">
-              Lexo analizën e plotë
-              <ArrowRight
-                className="direction-icon"
-                size={18}
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Link>
-          </Reveal>
-
-          <div className="publication-metrics" aria-label="Të dhënat kryesore">
-            <Reveal delay={40}>
-              <StatMetric
-                context="Mostra"
-                icon={Briefcase}
-                label="biznese në mostër"
-                progress={100}
-                value="40"
-              />
-            </Reveal>
-            <Reveal delay={100}>
-              <StatMetric
-                context="Mbulimi"
-                icon={MagnifyingGlass}
-                label="mbulim i sektorit në zonë"
-                progress={80}
-                value="~80%"
-              />
-            </Reveal>
-            <Reveal delay={160}>
-              <StatMetric
-                context="Terreni"
-                icon={CalendarDots}
-                label="ditë punë në terren"
-                progress={64}
-                value="36"
-              />
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section data-feature">
-          <div className="data-feature-copy">
-            <Reveal>
-              <p className="section-label">Gjetja kryesore</p>
-              <h2>
-                Potencial real.
-                <br />
-                Sfida reale.
-              </h2>
-            </Reveal>
-            <Reveal delay={100}>
-              <p className="large-copy">
-                Problemi kryesor nuk qëndron vetëm brenda bizneseve, por në
-                kushtet ku ato operojnë.
-              </p>
-              <p>
-                Parkimi, hapësira publike, mungesa e stafit dhe komunikimi i
-                dobët institucional ndikojnë drejtpërdrejt në cilësinë e
-                përvojës gastronomike.
-              </p>
-            </Reveal>
-          </div>
-
-          <Reveal className="data-feature-visual" delay={140}>
-            <div className="donut" role="img" aria-label="77.5 për qind">
-              <div>
-                <UsersThree
-                  className="donut-icon"
-                  size={32}
-                  weight="duotone"
-                  aria-hidden="true"
-                />
-                <strong>77.5%</strong>
-                <span>raportojnë mungesë stafi</span>
-              </div>
-            </div>
-            <div className="mini-stat">
-              <div className="mini-stat-top">
-                <Car
-                  size={28}
-                  weight="duotone"
-                  aria-hidden="true"
-                />
-                <strong>4.67 / 5</strong>
-              </div>
-              <span>Parkingu - pengesa më e madhe</span>
-            </div>
-            <div className="mini-stat">
-              <div className="mini-stat-top">
-                <ChatsCircle
-                  size={28}
-                  weight="duotone"
-                  aria-hidden="true"
-                />
-                <strong>72.5%</strong>
-              </div>
-              <span>Pa udhëzime institucionale</span>
-            </div>
-          </Reveal>
-        </section>
-
-        <section className="section importance-section">
-          <Reveal className="section-heading-row">
-            <div>
-              <p className="section-label">Rëndësia e hulumtimit</p>
-              <h2>Pse gastronomia ka rëndësi?</h2>
-            </div>
-            <p>
-              Gastronomia është pjesë organike e identitetit, ekonomisë dhe
-              turizmit të Qendrës Historike të Prizrenit.
-            </p>
-          </Reveal>
-
-          <div className="importance-list">
-            {importance.map((item, index) => (
-              <Reveal
-                className="importance-item"
-                delay={index * 50}
-                key={item.title}
-              >
-                <div className="importance-item-top">
-                  <item.icon
-                    size={42}
-                    weight="duotone"
-                    aria-hidden="true"
+            return (
+              <Fragment key={title}>
+                <Reveal className="home-report-section">
+                  <img
+                    src={getResearchPageImage(index)}
+                    alt={`Përmbledhja e hulumtimit: ${title}`}
+                    width="1684"
+                    height="1191"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
                   />
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </section>
+                </Reveal>
 
-        <section className="section priority-section">
-          <Reveal className="priority-intro">
-            <p className="section-label">Plan veprimi</p>
-            <h2>Pesë prioritete strategjike</h2>
-            <p>
-              Për ta zhvilluar gastronominë, duhet të zhvillohet edhe mjedisi
-              ku ajo funksionon.
-            </p>
-          </Reveal>
-
-          <ol className="priority-list">
-            {priorities.map((priority, index) => (
-              <Reveal delay={index * 45} key={priority.title}>
-                <li>
-                  <span className="priority-icon" aria-hidden="true">
-                    <priority.icon
-                      size={40}
-                      weight="duotone"
-                    />
-                  </span>
-                  <strong>{priority.title}</strong>
-                  <ArrowRight
-                    className="direction-icon priority-direction-icon"
-                    size={22}
-                    weight="bold"
-                    aria-hidden="true"
-                  />
-                </li>
-              </Reveal>
-            ))}
-          </ol>
-        </section>
-
-        <section className="section about-teaser">
-          <Reveal className="about-teaser-kicker">
-            <p className="section-label">Rreth NAM</p>
-            <span className="about-year">
-              <Plant
-                size={21}
-                weight="duotone"
-                aria-hidden="true"
-              />
-              2026
-            </span>
-          </Reveal>
-          <Reveal className="about-teaser-copy" delay={100}>
-            <h2>
-              Një qendër ekspertize
-              <br />
-              për turizmin e së ardhmes.
-            </h2>
-            <p>
-              NAM është institut i pavarur kërkimor dhe profesional. Ne lidhim
-              të dhënat, kontekstin lokal dhe praktikat e mira ndërkombëtare
-              për të mbështetur institucione, biznese dhe komunitete.
-            </p>
-            <Link className="button button-primary" href="/rreth-nesh">
-              Më shumë për ne
-              <ArrowRight
-                className="direction-icon"
-                size={19}
-                weight="bold"
-                aria-hidden="true"
-              />
-            </Link>
-          </Reveal>
+                {interlude ? (
+                  <Reveal className="research-photo-interlude">
+                    <figure>
+                      <img
+                        src={interlude.src}
+                        alt={interlude.alt}
+                        width="1600"
+                        height="1066"
+                        loading="lazy"
+                      />
+                      <figcaption>
+                        <span>{interlude.label}</span>
+                        <p>{interlude.caption}</p>
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                ) : null}
+              </Fragment>
+            );
+          })}
         </section>
       </main>
 

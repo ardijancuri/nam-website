@@ -41,7 +41,7 @@ export default function AboutPage() {
             <div className="about-hero-inner">
               <div className="about-hero-index hero-enter hero-enter-1">
                 <span>Rreth nesh</span>
-                <span>01 / 04</span>
+                <span>01 / 05</span>
               </div>
               <div className="about-hero-layout">
                 <div className="about-hero-copy hero-enter hero-enter-2">
@@ -88,10 +88,10 @@ export default function AboutPage() {
           >
             <Reveal className="about-place-media">
               <img
-                src="/prizren-cultural-heritage.webp"
-                alt="Kulla e një kishe historike në Prizren në dritën e mbrëmjes"
-                width="1600"
-                height="1066"
+                src="/about-prizren-domes.webp"
+                alt="Kupolat dhe minarja në Qendrën Historike të Prizrenit"
+                width="1280"
+                height="853"
                 loading="lazy"
               />
             </Reveal>
@@ -115,7 +115,7 @@ export default function AboutPage() {
 
           <section className="section about-work">
             <Reveal className="about-work-heading">
-              <span>02</span>
+              <span>03</span>
               <div>
                 <p className="section-label">Çfarë bëjmë</p>
                 <h2>Nga terreni te vendimmarrja.</h2>
@@ -127,6 +127,21 @@ export default function AboutPage() {
                 të destinacioneve, raporte profesionale, publikime tematike,
                 këshillim dhe aktivitete për ndërtimin e kapaciteteve.
               </p>
+            </Reveal>
+            <Reveal className="about-work-media" delay={120}>
+              <figure>
+                <img
+                  src="/about-field-research.webp"
+                  alt="Ekipi i NAM gjatë mbledhjes së të dhënave në terren"
+                  width="1280"
+                  height="853"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Hulumtimi në terren e lidh analizën me përvojën reale të
+                  komunitetit.
+                </figcaption>
+              </figure>
             </Reveal>
             <div className="field-list">
               {fields.map((field, index) => (
@@ -142,7 +157,7 @@ export default function AboutPage() {
 
           <section className="section approach-section">
             <Reveal className="approach-index">
-              <span>03</span>
+              <span>04</span>
               <p className="section-label">Qasja jonë</p>
             </Reveal>
             <div className="approach-content">
@@ -174,12 +189,21 @@ export default function AboutPage() {
                   qarta për komunitetet ku zhvillohet turizmi.
                 </p>
               </Reveal>
+              <Reveal className="approach-media" delay={180}>
+                <img
+                  src="/prizren-cultural-heritage.webp"
+                  alt="Kulla e një kishe historike në Prizren në dritën e mbrëmjes"
+                  width="1600"
+                  height="1066"
+                  loading="lazy"
+                />
+              </Reveal>
             </div>
           </section>
 
           <section className="section vision-section">
             <Reveal className="vision-meta">
-              <span>04</span>
+              <span>05</span>
               <p className="section-label">Vizioni ynë</p>
             </Reveal>
             <Reveal className="vision-copy" delay={90}>
